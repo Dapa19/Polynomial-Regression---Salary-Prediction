@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #chart {
+            width: 100%;
+            height: 400px;
+        }
+    </style>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Polynomial Regression Project - Salary Prediction</a>
+    </nav>
+    <div class="container">
+        <h1 class="text-center my-4">Prediction Result</h1>
+        <div class="alert alert-info">
+            <h4>Predicted Salary: {{ prediction | format_currency }}</h4>
+        </div>
+        <div id="chart"></div>
+        <a href="/" class="btn btn-secondary mt-4">Back</a>
+    </div>
+    <br>
+    <br>
+    <footer class="bg-dark text-white text-center py-3 mt-4">
+        <p>Dafa Aulia</p>
+        <a href="mailto:auliadafa91l@gmail.com" class="text-white">Gmail</a> | 
+        <a href="https://github.com/Dapa19" target="_blank" class="text-white">GitHub</a>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const positionLevels = {{ position_levels | tojson }};
+            const predictedSalaries = {{ predicted_salaries | tojson }};
+
+            Highcharts.chart('chart', {
+                chart: {
+                    type: 'line'
+                },
+                title: {
+                    text: 'Predicted Salaries vs Position Levels'
+                },
+                xAxis: {
+                    categories: positionLevels,
+                    title: {
+                        text: 'Position Level'
+                    }
+                },
+                yAxis: {
+                    title: {
+                        text: 'Salary'
+                    },
+                    labels: {
+                        format: '${value:,.0f}', // Format to display dollar amounts
+                        style: {
+                            color: '#007bff'
+                        }
+                    }
+                },
+                tooltip: {
+                    pointFormatter: function () {
+                        return `<b>$${Highcharts.numberFormat(this.y, 2)}</b>`; // Format to display dollar amounts
+                    }
+                },
+                series: [{
+                    name: 'Predicted Salary',
+                    data: predictedSalaries,
+                    color: '#007bff'
+                }],
+                responsive: {
+                    rules: [{
+                        condition: {
+                            maxWidth: 500
+                        },
+                        chartOptions: {
+                            legend: {
+                                align: 'center',
+                                verticalAlign: 'bottom',
+                                layout: 'horizontal'
+                            }
+                        }
+                    }]
+                }
+            });
+        });
+    </script>
+</body>
+</html>

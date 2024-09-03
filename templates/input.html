@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Level Input</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Polynomial Regression Project - Salary Prediction</a>
+    </nav>
+    <div class="container">
+        <h1 class="text-center my-4">Predict Salary Based on Position Level</h1>
+        <form action="/predict" method="POST" class="form-group">
+            <label for="position_level">Position Level:</label>
+            <input type="number" step="any" class="form-control" id="position_level" name="position_level" required>
+            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+            <hr>
+            <br>
+            <h3 class="text-center mb-4">Position Level Table</h3>
+            <table class="table table-bordered table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Position</th>
+                        <th>Level</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Business Analyst</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Junior Consultant</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Senior Consultant</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>Manager</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>Country Manager</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>Region Manager</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>Partner</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>Senior Partner</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>C-level</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td>CEO</td>
+                        <td>10</td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <br>
+    <br>
+    <footer class="bg-dark text-white text-center py-3 mt-4">
+        <p>Dafa Aulia</p>
+        <a href="mailto:auliadafa91l@gmail.com" class="text-white">Gmail</a> | 
+        <a href="https://github.com/Dapa19" target="_blank" class="text-white">GitHub</a>
+    </footer>
+</body>
+</html>

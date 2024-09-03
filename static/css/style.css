@@ -1,0 +1,25 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 600px;
+    margin-top: 50px;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.btn {
+    width: 100%;
+}
+
+.alert {
+    font-size: 20px;
+}
