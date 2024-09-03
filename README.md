@@ -5,30 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salary Prediction Project - README</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-        }
-        h1, h2 {
-            color: #333;
-        }
-        a {
-            color: #0275d8;
-            text-decoration: none;
-        }
-        code {
-            background-color: #f9f9f9;
-            padding: 2px 5px;
-            border-radius: 4px;
-        }
-        .screenshot {
-            border: 1px solid #ddd;
-            margin: 10px 0;
-        }
-    </style>
 </head>
 <body>
 
